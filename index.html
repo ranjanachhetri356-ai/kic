@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sports Players</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #74ebd5, #9face6);
+        }
+
+        header {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .sports {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            width: 250px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            overflow: hidden;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card-content h3 {
+            margin: 10px 0 5px;
+            color: #444;
+        }
+
+        .card-content p {
+            margin: 0;
+            color: #777;
+        }
+
+        .active {
+            border: 4px solid #ff9800;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #222;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    🏆 Sports Players Website
+</header>
+
+<div class="container">
+    <h2>Our Popular Players</h2>
+
+    <div class="sports">
+        <!-- Soccer -->
+        <div class="card" onclick="selectPlayer(this)">
+            <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d" alt="Soccer">
+            <div class="card-content">
+                <h3>Soccer Player</h3>
+                <p>Speed • Skill • Teamwork</p>
+            </div>
+        </div>
+
+        <!-- Volleyball -->
+        <div class="card" onclick="selectPlayer(this)">
+            <img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf" alt="Volleyball">
+            <div class="card-content">
+                <h3>Volleyball Player</h3>
+                <p>Jump • Power • Focus</p>
+            </div>
+        </div>
+
+        <!-- Badminton -->
+        <div class="card" onclick="selectPlayer(this)">
+            <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e" alt="Badminton">
+            <div class="card-content">
+                <h3>Badminton Player</h3>
+                <p>Agility • Speed • Control</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 Sports World | Designed with ❤️
+</footer>
+
+<script>
+    function selectPlayer(card) {
+        let cards = document.querySelectorAll('.card');
+        cards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        alert("You selected: " + card.querySelector("h3").innerText);
+    }
+</script>
+
+</body>
+</html>
